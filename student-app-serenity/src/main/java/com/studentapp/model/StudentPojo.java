@@ -2,15 +2,14 @@ package com.studentapp.model;
 
 import java.util.List;
 
-/**
- * Created by Jay
- */
+
 public class StudentPojo {
 
     private String firstName;
     private String lastName;
     private String email;
     private String programme;
+    private String programme1;
     private List<String> courses;
 
     public String getFirstName() {
@@ -51,5 +50,16 @@ public class StudentPojo {
 
     public void setCourses(List<String> courses) {
         this.courses = courses;
+    }
+
+    public static StudentPojo getStudentPojo(String firstName, String lastName, String email,
+                                             String programme, List<String> courses){
+        StudentPojo studentPojo = new StudentPojo();
+        studentPojo.setFirstName(firstName);
+        studentPojo.setLastName(lastName);
+        studentPojo.setEmail(email);
+        studentPojo.setProgramme(programme);
+        studentPojo.setCourses(courses);
+        return studentPojo;
     }
 }
